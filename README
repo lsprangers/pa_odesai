@@ -24,6 +24,10 @@ uses:
 author:
 Luke Sprangers
 
-don't copy this onto anything important - this is my personal work, nothing was designed/used in any company setting, and I will be pissed off if I get some sort of letter about fraud/intellectual property. 
-
-don't copy this onto anything un-important - this is my personal work and I don't want anyone else to take credit
+credits:
+    InternetArgument Corpus: "git@bitbucket.org:nlds_iac/internet-argument-corpus-2.git"
+        class
+        data
+        setup.py
+        license
+        readmeiacorpus

@@ -28,3 +28,10 @@ dependencies:
  - virtualenv
  - pip
  - yellowbrick
+ - gensim
+ - sqlalchemy
+ - mysqlclient
+ - inflect
+ - lxml
+ - python-dateutil
+ - bs4
