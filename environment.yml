@@ -1,0 +1,30 @@
+name: env1
+channels:
+ - defaults
+ - conda-forge
+ - pytorch
+dependencies:
+ - python=3.7.9
+ - black
+ - fbprophet
+ - joblib
+ - jupytext
+ - matplotlib
+ - mypy
+ - networkx
+ - notebook
+ - nltk
+ - numpy
+ - pandas
+ - pre-commit
+ - pylint
+ - pytorch
+ - scikit-learn
+ - scipy
+ - statsmodels
+ - tensorflow
+ - torchvision
+ - r-ggplot2
+ - virtualenv
+ - pip
+ - yellowbrick
