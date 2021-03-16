@@ -29,9 +29,9 @@ dependencies:
  - pip
  - yellowbrick
  - gensim
- - sqlalchemy
- - mysqlclient
+ - praw
  - inflect
+ - dotenv
+ - python-dotenv
  - lxml
  - python-dateutil
- - bs4
