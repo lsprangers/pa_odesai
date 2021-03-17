@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv(verbose=True)
 
-reddit_obj = praw.Reddit(
+smootCityReddit = praw.Reddit(
     client_id=os.getenv("REDDIT_CLIENT_ID"),
     client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
     password=os.getenv("REDDIT_PASSWORD"),
@@ -11,21 +11,26 @@ reddit_obj = praw.Reddit(
     user_agent="SmootCity:ResearchDept:Intern:V1 (by u/smoot_city)",
 )
 
+t_configs = {
+    "subreddit_groups": {
+        "milwaukee": ['milwaukee+wisconsin+WI'],
+        "kolar": ["ClayBusters+TrapShooting+gun+guns+shotgun"],
+    },
+    "search_groups": {
+        "milwaukee": ['WEEnergies', 'we energies', 'WE Energies', 'WE Energy', 'we energy', 'we energ*', 'WE Energ*'],
+        "kolar": ['k80', 'K-80', 'K80', 'R9', 'Kolar', 'kolar', 'klar', 'klr'],
+    }
+}
 
-print(f"Is read only instance: {reddit.read_only}")
-print(f"Me: {reddit.user.me()}")
+
+milwaukee_subreddit = smootCityReddit.subreddit(t_configs["subreddit_groups"]["milwaukee"])
+kolar_subreddit = smootCityReddit.subreddit(t_configs["subreddit_groups"]["kolar"])
 
 
-subreddit = reddit.subreddit("milwaukee")
 
-print(subreddit.display_name)
+for comment in kolar_subreddit.comments(limit=None):
+    for itemtofind in t_configs["search_groups"]["kolar"]:
+        if itemtofind in comment.body:
+            print(f"comment: {comment.body}\n\n\n\n\n")     #   print pretty
 
 
-for submission in subreddit.hot(limit=10):
-    print(submission.title)
-    # Output: the submission's title
-    print(submission.score)
-    # Output: the submission's score
-    print(submission.id)
-    # Output: the submission's ID
-    print(submission.url)
