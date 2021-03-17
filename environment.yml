@@ -14,6 +14,8 @@ dependencies:
  - networkx
  - notebook
  - nltk
+ - bert-tensorflow
+ - tensorflow>=2.0.0
  - numpy
  - pandas
  - pre-commit
@@ -22,13 +24,12 @@ dependencies:
  - scikit-learn
  - scipy
  - statsmodels
- - tensorflow
  - torchvision
  - r-ggplot2
  - virtualenv
  - pip
  - yellowbrick
- - gensim
+ - gensim==4.0.0b0
  - praw
  - inflect
  - dotenv
