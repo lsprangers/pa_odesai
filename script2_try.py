@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 
 load_dotenv(verbose=True)
 
+from connectme.reddit import smooter
+from brainz.lilbrain import simple_thinker
 env_vars = {
     "reddit": {
         "client_id": os.getenv("REDDIT_CLIENT_ID"),
@@ -37,8 +39,6 @@ model_configs = {
     },
 }
 
-from src.connectme.reddit import smooter
-from src.brainz.lilbrain import simple_thinker
 
 mySmoot = smooter(online_access_configs).connect_now()
 smootThinker = simple_thinker(model_configs).get_gensim_docvec_model()
