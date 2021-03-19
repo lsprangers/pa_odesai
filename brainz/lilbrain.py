@@ -1,16 +1,16 @@
 from gensim.models import Doc2Vec
 
 
-def think_by():
+class simple_thinker():
     """try to do something worthwhile
 
     Examples:
         >>> from brainz import lilbrain
-        >>> my_word_model = lilbrain.think_by().looking_forward()
+        >>> my_word_model = lilbrain.simple_thinker().get_gensim_docvec_model()
     """
 
     def __init__(self, model_configs):
         self.model_configs = model_configs
 
-    def looking_forward(self):
-        self.docvec_model = Doc2Vec(**self.model_configs["doc2vec"])
+    def get_gensim_docvec_model(self):
+        return Doc2Vec(**self.model_configs["doc2vec"])
