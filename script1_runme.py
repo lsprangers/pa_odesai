@@ -38,7 +38,7 @@ model_configs = {
 }
 
 from src.connectme.reddit import smooter
-from src.brainz import simple_thinker
+from src.brainz.lilbrain import simple_thinker
 
 mySmoot = smooter(online_access_configs).connect_now()
 smootThinker = simple_thinker(model_configs).get_gensim_docvec_model()
