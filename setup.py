@@ -1,4 +1,3 @@
-import praw
 import os
 from dotenv import load_dotenv
 
@@ -8,16 +7,32 @@ import gensim
 
 load_dotenv(verbose=True)
 
-smootCityReddit = praw.Reddit(
-    client_id=os.getenv("REDDIT_CLIENT_ID"),
-    client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
-    password=os.getenv("REDDIT_PASSWORD"),
-    username=os.getenv("REDDIT_USERNAME"),
-    user_agent="SmootCity:ResearchDept:Intern:V1 (by u/smoot_city)",
-)
+env_vars = {
+    "reddit": {
+        "reddit_client_id": os.getenv("REDDIT_CLIENT_ID"),
+        "reddit_client_secret": os.getenv("REDDIT_CLIENT_SECRET"),
+        "reddit_password": os.getenv("REDDIT_PASSWORD"),
+        "reddit_username": os.getenv("REDDIT_USERNAME"),
+    },
+}
 
-doc2vec_model = gensim.models.Doc2Vec()
-print(type(doc2vec_model))
+online_access_configs = {
+    "reddit": {
+        "base": {
+            "user_agent": "SmootCity:ResearchDept:Intern:V1 (by u/smoot_city)",
+            **env_vars["reddit"],
+        }
+    },
+}
+
+model_configs = {
+    "doc2vec": {
+        "min_count": 8,
+    },
+}
+
+doc2vec_model = gensim.models.Doc2Vec(model_configs["doc2vec"])
+
 
 t_configs = {
     "subreddit_groups": {

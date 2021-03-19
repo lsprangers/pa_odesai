@@ -15,7 +15,9 @@ dependencies:
  - notebook
  - nltk
  - bert-tensorflow
- - tensorflow>=2.0.0
+ - tensorflow>=2.4.0
+ - tensorflow-text
+ - tf-models-official
  - numpy
  - pandas
  - pre-commit
