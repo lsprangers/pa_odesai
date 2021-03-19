@@ -22,6 +22,7 @@ sql_auth.json
 
 #Python
 *.py[cod]
+.pyirc
 __pycache__
 dist/
 *.egg-info

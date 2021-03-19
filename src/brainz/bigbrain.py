@@ -14,7 +14,7 @@ def test_thought():
     """try to do something worthwhile
 
     Examples:
-        >>> from brainz import lilbrain
+        >>> from src.brainz import lilbrain
         >>> my_word_model = bigbrain.test_thought().look_around()
     """
 
@@ -25,8 +25,8 @@ def test_thought():
         self.seed = 42
         self.standford_testing_url = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
         self.dataset = tf.keras.utils.get_file('aclImdb_v1.tar.gz', self.standford_testing_url,
-                                          untar=True, cache_dir='.',
-                                          cache_subdir='')
+                                               untar=True, cache_dir='',
+                                               cache_subdir='')
 
         self.dataset_dir = os.path.join(os.path.dirname(self.dataset), 'aclImdb')
 
