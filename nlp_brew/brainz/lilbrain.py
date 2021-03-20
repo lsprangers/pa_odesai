@@ -5,7 +5,7 @@ class simple_thinker():
     """try to do something worthwhile
 
     Examples:
-        >>> from src.brainz import lilbrain
+        >>> from nlp_brew.brainz import lilbrain
         >>> my_word_model = lilbrain.simple_thinker().get_gensim_docvec_model()
     """
 

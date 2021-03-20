@@ -14,7 +14,7 @@ def test_thought():
     """try to do something worthwhile
 
     Examples:
-        >>> from src.brainz import lilbrain
+        >>> from nlp_brew.brainz import lilbrain
         >>> my_word_model = bigbrain.test_thought().look_around()
     """
 

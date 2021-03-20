@@ -20,7 +20,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    package_dir={"": "nlp_brew"},
+    packages=setuptools.find_packages(where="nlp_brew"),
     python_requires=">=3.0",
 )
