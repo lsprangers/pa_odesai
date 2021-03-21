@@ -1,18 +1,4 @@
 import sys
-from filler_up import fill_it
-
-lib_dict = {
-    'shorthand': None,
-    'pure': ['gensim.models.Doc2Vec', 'numpy', 'nltk', 'pandas']
-}
-
-my_filler = fill_it.GetTheBag(lib_dict)
-did_it_work = my_filler.go_get_it()
-
-if did_it_work:
-    print("it worked!")
-else:
-    print("try again")
 
 
 class Simpleton(dict):
@@ -29,4 +15,16 @@ class Simpleton(dict):
         self.model_configs = model_configs
 
     def get_gensim_docvec_model(self):
-        return Doc2Vec(**self.model_configs["doc2vec"])
+        return models.Doc2Vec(**self.model_configs["doc2vec"])
+
+
+# from importlib import import_module
+# sys.path.extend(['.', '../', '../../'])
+# from filler_up import fill_it
+#
+# lib_dict = {
+#     'shorthand': None,
+#     'pure': ["gensim.models", "numpy", "nltk", "pandas"]
+# }
+# my_filler = fill_it.GetTheBag(lib_dict)
+# did_it_work = my_filler.go_get_it()

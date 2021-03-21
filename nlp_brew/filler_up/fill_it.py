@@ -13,9 +13,10 @@ class GetTheBag(dict):
             print("loading shorthand modules")
             for (name, short) in self.lib_dict['shorthand']:
                 try:
-                    lib = import_module(name)
+                    print("Loading" + str(name))
+                    lib = import_module(package=name)
                 except ImportError as e:
-                    print(f"{sys.exc_info()}")
+                    print("Error")
                 else:
                     globals()[short] = lib
 
@@ -25,9 +26,10 @@ class GetTheBag(dict):
             print("loading pure modules")
             for libname in self.lib_dict['pure']:
                 try:
+                    print("Loading " + str(libname))
                     lib = import_module(libname)
                 except ImportError as e:
-                    print(f"{sys.exc_info()}")
+                    print("Error")
                 else:
                     globals()[libname] = lib
 

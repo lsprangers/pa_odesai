@@ -1,17 +1,12 @@
-from filler_up.fill_it import GetTheBag
-
-lib_dict = {
-    'shorthand': [
-        ('tensorflow', 'tf'),
-        ('tensorflow_hub', 'hub'),
-        ('tensorflow_text', 'text'),
-        ('matplotlib.pyplot', 'plt'),
-    ],
-    'pure': ['numpy', 'shutil', 'nltk', 'official.nlp.optimization']
-}
-my_filler = GetTheBag(lib_dict)
-did_it_work = my_filler.go_get_it()
-
+import sys
+import tensorflow as tf
+import tensorflow_hub as hub
+import tensorflow_text as text
+import matplotlib.pyplot as plt
+import numpy
+import shutil
+import nltk
+import official.nlp.optimization
 
 class FrostyTheSnowman(dict):
     """try to do something worthwhile
@@ -90,3 +85,18 @@ class FrostyTheSnowman(dict):
                 print(f'Review: {text_batch.numpy()[i]}')
                 label = label_batch.numpy()[i]
                 print(f'Label : {label} ({self.class_names[label]})')
+
+
+# from filler_up.fill_it import GetTheBag
+#
+# lib_dict = {
+#     'shorthand': [
+#         ('tensorflow', 'tf'),
+#         ('tensorflow_hub', 'hub'),
+#         ('tensorflow_text', 'text'),
+#         ('matplotlib.pyplot', 'plt'),
+#     ],
+#     'pure': ['numpy', 'shutil', 'nltk', 'official.nlp.optimization']
+# }
+# my_filler = GetTheBag(lib_dict)
+# did_it_work = my_filler.go_get_it()
