@@ -1,4 +1,4 @@
-_Cup a Code (Tutorial for multiple things)_
+_Cup a Code_
 
 **authors:** 
     >>> Bryce Frost & Luke Sprangers
