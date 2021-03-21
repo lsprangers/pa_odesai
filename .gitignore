@@ -25,6 +25,8 @@ sql_auth.json
 *.pyirc
 __pycache__
 dist/
+build/*
+!build/build.xml
 *.egg-info
 MANIFEST
 
@@ -66,5 +68,6 @@ __MACOSX/
 #Kate (KDE text editor) temp
 .*.kate-swp
 
-# env
+# sensitive? idk
 *.env
+*.pyirc

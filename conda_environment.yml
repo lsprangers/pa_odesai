@@ -5,19 +5,18 @@ channels:
  - pytorch
 dependencies:
  - python=3.7.9
- - black
- - fbprophet
  - joblib
  - jupytext
  - matplotlib
  - mypy
- - networkx
  - notebook
- - nltk
  - bert-tensorflow
  - tensorflow>=2.4.0
  - tensorflow-text
  - tf-models-official
+ - gensim==4.0.0b0
+ - praw
+ - python-dotenv
  - numpy
  - pandas
  - pre-commit
@@ -30,11 +29,4 @@ dependencies:
  - r-ggplot2
  - virtualenv
  - pip
- - yellowbrick
- - gensim==4.0.0b0
- - praw
- - inflect
- - dotenv
- - python-dotenv
- - lxml
  - python-dateutil

@@ -11,9 +11,9 @@ setuptools.setup(
     description="A small example package named eloquently used for learning python",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/lsprangers/Natural-Language-Processing",
+    url="https://github.com/lsprangers/CupACode",
     project_urls={
-        "Bug Tracker": "https://github.com/lsprangers/Natural-Language-Processing/issues",
+        "Bug Tracker": "https://github.com/lsprangers/CupACode/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -22,5 +22,16 @@ setuptools.setup(
     ],
     package_dir={"": "nlp_brew"},
     packages=setuptools.find_packages(where="nlp_brew"),
+    install_requires=[
+        "bert-tensorflow",
+        "tensorflow>=2.4.0",
+        "tensorflow-text",
+        "tf-models-official",
+        "gensim==4.0.0b0",
+        "praw",
+        "python-dotenv",
+        "numpy",
+        "pandas",
+    ],
     python_requires=">=3.0",
 )

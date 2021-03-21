@@ -1,68 +1,104 @@
-import os
-import shutil
+import sys
+from importlib import import_module
 
-import tensorflow as tf
-import tensorflow_hub as hub
-import tensorflow_text as text
-from official.nlp import optimization  # to create AdamW optmizer
+# TODO: @Luke_Spranges --> Create DRY function to import stuff -- confused on how to make this simple.
+libs_with_shorthand = [
+    ('tensorflow', 'tf'),
+    ('tensorflow_hub', 'hub'),
+    ('tensorflow_text', 'text'),
+    ('matplotlib.pyplot', 'plt'),
+]
+libs_pure = ['numpy', 'shutil', 'official.nlp.optimization']
 
-import matplotlib.pyplot as plt
+for (name, short) in libs_with_shorthand:
+    try:
+        lib = import_module(name)
+    except ImportError as e:
+        print(f"{sys.exc_info()}")
+    else:
+        globals()[short] = lib
 
-tf.get_logger().setLevel('ERROR')
+for libname in libs_pure:
+    try:
+        lib = import_module(libname)
+    except ImportError as e:
+        print(f"{sys.exc_info()}")
+    else:
+        globals()[libname] = lib
 
-def test_thought():
+
+class FrostyTheSnowman(dict):
     """try to do something worthwhile
 
-    Examples:
-        >>> from nlp_brew.brainz import lilbrain
-        >>> my_word_model = bigbrain.test_thought().look_around()
+    Args:
+        model_configs (dict): dictionary of configurations for BERT model
+
+    Params:
+        model_configs          (dict): dictionary of configurations for BERT model
+        batch_size              (int): size of each batch
+        seed                    (int): seed for reproducibility
+        standford_testing_url   (str): url to stanford testing datasets
+
+    Example:
+        my_word_model = FrostyTheSnowman(mdl_configs)
+        my_word_model.look_around()
     """
+
+    tf.get_logger().setLevel('ERROR')
 
     def __init__(self, model_configs):
         self.model_configs = model_configs
         self.AUTOTUNE = tf.data.AUTOTUNE
         self.batch_size = 32
         self.seed = 42
-        self.standford_testing_url = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
-        self.dataset = tf.keras.utils.get_file('aclImdb_v1.tar.gz', self.standford_testing_url,
-                                               untar=True, cache_dir='',
-                                               cache_subdir='')
 
-        self.dataset_dir = os.path.join(os.path.dirname(self.dataset), 'aclImdb')
+        if 'test' in self.model_configs['directions']:
+            self.standford_testing_url = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
+            self.dataset = tf.keras.utils.get_file('aclImdb_v1.tar.gz', self.standford_testing_url,
+                                                   untar=True, cache_dir='',
+                                                   cache_subdir='')
 
-        self.train_dir = os.path.join(self.dataset_dir, 'train')
+            self.dataset_dir = os.path.join(os.path.dirname(self.dataset), 'aclImdb')
 
-        # remove unused folders to make it easier to load the data
-        self.remove_dir = os.path.join(self.train_dir, 'unsup')
-        shutil.rmtree(self.remove_dir)
+            self.train_dir = os.path.join(self.dataset_dir, 'train')
 
-    def setup_datasets(self):
-        self.raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory(
-            'aclImdb/train',
-            batch_size=self.batch_size,
-            validation_split=0.2,
-            subset='training',
-            seed=self.seed)
+            # remove unused folders to make it easier to load the data
+            self.remove_dir = os.path.join(self.train_dir, 'unsup')
+            shutil.rmtree(self.remove_dir)
 
-        self.class_names = self.raw_train_ds.class_names
-        self.train_ds = self.raw_train_ds.cache().prefetch(buffer_size=self.AUTOTUNE)
+        if "NO SETUP" not in self.model_configs['directions']:
 
-        self.val_ds = tf.keras.preprocessing.text_dataset_from_directory(
-            'aclImdb/train',
-            batch_size=self.batch_size,
-            validation_split=0.2,
-            subset='validation',
-            seed=self.seed)
+            self.raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory(
+                'aclImdb/train',
+                batch_size=self.batch_size,
+                validation_split=0.2,
+                subset='training',
+                seed=self.seed)
 
-        self.val_ds = self.val_ds.cache().prefetch(buffer_size=self.AUTOTUNE)
+            self.class_names = self.raw_train_ds.class_names
+            self.train_ds = self.raw_train_ds.cache().prefetch(buffer_size=self.AUTOTUNE)
 
-        self.test_ds = tf.keras.preprocessing.text_dataset_from_directory(
-            'aclImdb/test',
-            batch_size=self.batch_size)
+            self.val_ds = tf.keras.preprocessing.text_dataset_from_directory(
+                'aclImdb/train',
+                batch_size=self.batch_size,
+                validation_split=0.2,
+                subset='validation',
+                seed=self.seed)
 
-        self.test_ds = self.test_ds.cache().prefetch(buffer_size=self.AUTOTUNE)
+            self.val_ds = self.val_ds.cache().prefetch(buffer_size=self.AUTOTUNE)
+
+            self.test_ds = tf.keras.preprocessing.text_dataset_from_directory(
+                'aclImdb/test',
+                batch_size=self.batch_size)
+
+            self.test_ds = self.test_ds.cache().prefetch(buffer_size=self.AUTOTUNE)
+
+        else:
+            print("not setting up")
 
     def look_around(self):
+        """take a look around and make sure it all works
+        """
         for text_batch, label_batch in self.train_ds.take(1):
             for i in range(3):
                 print(f'Review: {text_batch.numpy()[i]}')
