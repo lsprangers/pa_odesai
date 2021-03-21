@@ -1,5 +1,7 @@
 _Cup a Code_
 
+As of 2021-03-20 this is cloneable via git - venv / condavenv create from setup or conda_environment.yml file worked on my mac. 
+
 **authors:** 
     >>> Bryce Frost & Luke Sprangers
 
@@ -13,3 +15,4 @@ _Cup a Code_
 **usage:** 
     # testing purposes only:
         >>> don't use
+
