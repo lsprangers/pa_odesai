@@ -1,30 +1,16 @@
-import sys
-from importlib import import_module
+from filler_up.fill_it import GetTheBag
 
-# TODO: @Luke_Spranges --> Create DRY function to import stuff -- confused on how to make this simple.
-libs_with_shorthand = [
-    ('tensorflow', 'tf'),
-    ('tensorflow_hub', 'hub'),
-    ('tensorflow_text', 'text'),
-    ('matplotlib.pyplot', 'plt'),
-]
-libs_pure = ['numpy', 'shutil', 'official.nlp.optimization']
-
-for (name, short) in libs_with_shorthand:
-    try:
-        lib = import_module(name)
-    except ImportError as e:
-        print(f"{sys.exc_info()}")
-    else:
-        globals()[short] = lib
-
-for libname in libs_pure:
-    try:
-        lib = import_module(libname)
-    except ImportError as e:
-        print(f"{sys.exc_info()}")
-    else:
-        globals()[libname] = lib
+lib_dict = {
+    'shorthand': [
+        ('tensorflow', 'tf'),
+        ('tensorflow_hub', 'hub'),
+        ('tensorflow_text', 'text'),
+        ('matplotlib.pyplot', 'plt'),
+    ],
+    'pure': ['numpy', 'shutil', 'nltk', 'official.nlp.optimization']
+}
+my_filler = GetTheBag(lib_dict)
+did_it_work = my_filler.go_get_it()
 
 
 class FrostyTheSnowman(dict):

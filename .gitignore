@@ -1,26 +1,14 @@
-#project specific
-sql_auth.json
+# project specific
+*.env
 
-#SQL DB dumps - very big...
-/sql_backup/*
-!/sql_backup/README.txt
+### ! means NOT ###
 
-#Resources exclude all except whitelist...
-/resources/*
-!/resources/README.txt
-!/resources/resources_index.json
-!/resources/stanford_parser_reference/*
+/data/*
 
 #temp dir
 /tmp/*
 !/tmp/README.txt
 
-
-
-# -----------------------------------
-# -----------------------------------
-
-#Python
 *.py[cod]
 *.pyirc
 __pycache__
@@ -30,44 +18,16 @@ build/*
 *.egg-info
 MANIFEST
 
-#IDE
+
 .project
 .pydevproject
 .idea/
-*.iml
 
-#really...?
+*.iml
 .svn/
 
-#Mac....
 .DS_Store
 *.swp
 __MACOSX/
 
-#KDE...
-.directory
-
-#Various
 *.lock
-
-#LaTeX
-#There are a lot more LaTeX generated junk file types out there, add as needed
-*.aux
-*.bbl
-*.blg
-*.toc
-
-#I'm a little torn on the following, comment out if you have an opinion
-#*.out and *.log show up with LaTeX
-*.out
-*.log
-
-#OpenOffice
-.~lock.*
-
-#Kate (KDE text editor) temp
-.*.kate-swp
-
-# sensitive? idk
-*.env
-*.pyirc

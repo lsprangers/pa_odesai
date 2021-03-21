@@ -1,15 +1,14 @@
-name: env1
+name: conda_env1
 channels:
  - defaults
  - conda-forge
- - pytorch
 dependencies:
  - python=3.7.9
- - joblib
  - jupytext
  - matplotlib
  - mypy
  - notebook
+ - joblib
  - bert-tensorflow
  - tensorflow>=2.4.0
  - tensorflow-text
@@ -19,14 +18,9 @@ dependencies:
  - python-dotenv
  - numpy
  - pandas
- - pre-commit
  - pylint
- - pytorch
  - scikit-learn
  - scipy
- - statsmodels
- - torchvision
- - r-ggplot2
  - virtualenv
  - pip
  - python-dateutil

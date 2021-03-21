@@ -1,16 +1,18 @@
 import sys
-from importlib import import_module
+from filler_up import fill_it
 
-# TODO: @Luke_Sprangers --> Create DRY function to import stuff -- confused on how to make this simple.
-libs_pure = ['gensim.models.Doc2Vec', 'numpy', 'pandas']
+lib_dict = {
+    'shorthand': None,
+    'pure': ['gensim.models.Doc2Vec', 'numpy', 'nltk', 'pandas']
+}
 
-for libname in libs_pure:
-    try:
-        lib = import_module(libname)
-    except ImportError as e:
-        print(f"{sys.exc_info()}")
-    else:
-        globals()[libname] = lib
+my_filler = fill_it.GetTheBag(lib_dict)
+did_it_work = my_filler.go_get_it()
+
+if did_it_work:
+    print("it worked!")
+else:
+    print("try again")
 
 
 class Simpleton(dict):
