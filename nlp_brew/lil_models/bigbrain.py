@@ -87,7 +87,7 @@ class FrostyTheSnowman(dict):
                 print(f'Label : {label} ({self.class_names[label]})')
 
 
-# from filler_up.fill_it import GetTheBag
+# from connect_locally.fill_it import GetTheBag
 #
 # lib_dict = {
 #     'shorthand': [

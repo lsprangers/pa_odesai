@@ -20,7 +20,7 @@ class Simpleton(dict):
 
 # from importlib import import_module
 # sys.path.extend(['.', '../', '../../'])
-# from filler_up import fill_it
+# from connect_locally import fill_it
 #
 # lib_dict = {
 #     'shorthand': None,

@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="cup_a_code_smoot",  # Replace with your own username
-    version="0.0.1",
+    name="cup-a-code-smoot",    # <package name>_<pypi username>
+    version="0.1.0",
     author="Luke Sprangers",
     author_email="sprangersluke@gmail.com",
     description="A small example package named eloquently used for learning python",
@@ -33,5 +33,5 @@ setuptools.setup(
         "numpy",
         "pandas",
     ],
-    python_requires=">=3.0",
+    python_requires=">=3.7",
 )
