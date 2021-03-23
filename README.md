@@ -6,7 +6,11 @@
 * Side try - create easy to use tool for personal analytics for normal people
 
 ### _Creating a virtual environment_
-    > Currently, there are two common tools for creating 
+    > Currently, there are three common tools for creating
+        Conda (Anaconda) - suggested
+
+        > docs: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+
         Python virtual environments:
 
         > venv is available by default in Python 3.3 and later, and 
