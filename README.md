@@ -1,5 +1,5 @@
 # Cup a Code: 
-#### PyPi Package *testing only
+#### PyPi Package - Use tests/test_basic/more/even_more.py (3 files) to get feel for Doc2Vec, BERT, NNetworks, Word Embedding Models, compressing, and using
 
 ## Using this package:
 * Created to show necessary structure for creating a PyPi package
