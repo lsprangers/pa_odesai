@@ -1,16 +1,21 @@
 import sys
-from importlib import import_module
+import praw
+from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+from dotenv import load_dotenv
+import logging
+import joblib
 
-# TODO: @Luke_Sprangers --> Create DRY function to import stuff -- confused on how to make this simple.
-libs_pure = ['praw', 'numpy', 'pandas']
+common_subreddits = {
+    'energy': 'RenewableEnergy+hardenergy+energypolitics+oilandgasworkers+Oil+wisconsin+milwaukee',
+    'dev': 'reddit_dev+code'
+}
 
-for libname in libs_pure:
-    try:
-        lib = import_module(libname)
-    except ImportError as e:
-        print(f"{sys.exc_info()}")
-    else:
-        globals()[libname] = lib
+
+def print_attributes(pkg):
+    the_attributes = [x for x in dir(pkg) if '__' not in x]  # ignore private vars
+    print('attributes: \n')
+    for att in the_attributes:
+        print(str(att))
 
 
 class SmootPraw:
@@ -27,8 +32,7 @@ class SmootPraw:
 
     def __init__(self, reddit_login_configs):
         self.reddit_login_configs = reddit_login_configs
+        self.reddit_instance = praw.Reddit(**self.reddit_login_configs)
 
-    def connect_now(self):
-        """connect to reddit"""
-
-        return praw.Reddit(**self.reddit_login_configs["reddit"]["base"])
+    def get_common_subreddit(self, choice):
+        return self.reddit_instance.subreddit(common_subreddits[choice])
