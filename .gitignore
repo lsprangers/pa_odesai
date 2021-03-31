@@ -1,3 +1,13 @@
+# BERT
+*/train/
+*/unsup/
+*/aclImdb/
+*/test/
+train/
+unsup/
+aclImdb/
+test/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

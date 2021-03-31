@@ -7,33 +7,29 @@
 * Side try - create easy to use tool for personal analytics for normal people
 
 ### _Creating a virtual environment_
-    > Currently, there are three common tools for creating
-        Conda (Anaconda) - suggested
 
-        > docs: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+> Currently, there are three common tools for creating a virtual env:
+1) Conda (Anaconda) - suggested
+    
+    a)  https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+    
+         conda env create -n yer_env -f conda_environment_yer_env.yml
+   
+         conda remove --name myenv --all
 
-        Python virtual environments:
-
-        > venv is available by default in Python 3.3 and later, and 
-            installs pip and setuptools into created virtual 
-            environments in Python 3.4 and later.
+2) Python virtual environments:
+   
+    a) venv is available by default in Python 3.3+
+ 
+        python3 -m venv <YER_DIR>
+   
+        source <YER_YER_DIR>/bin/activate
+   
+   b) virtualenv needs to be installed separately
     
-        > virtualenv needs to be installed separately, but supports 
-            Python 2.7+ and Python 3.3+, and pip, setuptools and wheel 
-            are always installed into created virtual 
-            environments by default (regardless of Python version).
-    
-    > The basic usage is like so:
-    
-        > venv:
-    
-            python3 -m venv <DIR>
-            source <DIR>/bin/activate
-    
-        > virtualenv:
-    
-            virtualenv <DIR>
-            source <DIR>/bin/activate
+        virtualenv <YER_DIR>
+   
+        source <YER_DIR>/bin/activate
 
 # ONLY AFTER CREATING A VIRTUAL ENV
 

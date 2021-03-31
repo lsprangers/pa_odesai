@@ -1,4 +1,4 @@
-import sys
+import os
 import tensorflow as tf
 import tensorflow_hub as hub
 import tensorflow_text as text
@@ -8,8 +8,9 @@ import shutil
 import nltk
 import official.nlp.optimization
 
-class FrostyTheSnowman(dict):
-    """try to do something worthwhile
+
+class TestBert:
+    """BERT test for this project
 
     Args:
         model_configs (dict): dictionary of configurations for BERT model
@@ -21,7 +22,7 @@ class FrostyTheSnowman(dict):
         standford_testing_url   (str): url to stanford testing datasets
 
     Example:
-        my_word_model = FrostyTheSnowman(mdl_configs)
+        my_word_model = TestBert(mdl_configs)
         my_word_model.look_around()
     """
 
@@ -85,18 +86,3 @@ class FrostyTheSnowman(dict):
                 print(f'Review: {text_batch.numpy()[i]}')
                 label = label_batch.numpy()[i]
                 print(f'Label : {label} ({self.class_names[label]})')
-
-
-# from connect_locally.fill_it import GetTheBag
-#
-# lib_dict = {
-#     'shorthand': [
-#         ('tensorflow', 'tf'),
-#         ('tensorflow_hub', 'hub'),
-#         ('tensorflow_text', 'text'),
-#         ('matplotlib.pyplot', 'plt'),
-#     ],
-#     'pure': ['numpy', 'shutil', 'nltk', 'official.nlp.optimization']
-# }
-# my_filler = GetTheBag(lib_dict)
-# did_it_work = my_filler.go_get_it()
