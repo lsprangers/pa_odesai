@@ -1,4 +1,6 @@
-import praw
+
+def bert_pad(str_to_fmt):
+    return ["<s>"] + str_to_fmt.split() + ["</s>"]
 
 
 class TokenizerInputHelper:
@@ -20,6 +22,6 @@ class TokenizerInputHelper:
 
     def __iter__(self):
         yield from (
-            rdt_cmt.body.split()
+            bert_pad(rdt_cmt.body)
             for rdt_cmt in self.subreddit.comments()
         )
