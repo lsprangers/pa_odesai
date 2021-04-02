@@ -6,10 +6,7 @@ import logging
 
 from dotenv import load_dotenv
 from nlp_brew.connect_online import reddit as ls_reddit
-from nlp_brew.lil_models.tokenizer_from_scratch import TokenizerInputHelper
-
-from tokenizers import ByteLevelBPETokenizer
-from tokenizers.processors import BertProcessing
+from nlp_brew.lil_models.liltokenizer import TokenizerInputHelper, TokenizerHelper
 
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -22,52 +19,19 @@ rdt_kwargs = {
     "password": os.getenv("REDDIT_PASSWORD"),
     "user_agent": "Checking:It:Out by (/smoot)",
 }
-output_fname = "tests/tmp_outputs/"
-model_output_name = "smoot_tokenizer"
-bool_train_from_scratch = True
+output_f = "tests/tmp_outputs/"
+model_name = "smoot_tokenizer2"
+bool_tf_scratch = True
+subr = ls_reddit.SmootPraw(rdt_kwargs).get_common_subreddit('energy')
 
-if bool_train_from_scratch:
+meHelper = TokenizerInputHelper(subreddit=subr)
 
-    tokenizer_input_generator = TokenizerInputHelper(
-        subreddit=ls_reddit.SmootPraw(rdt_kwargs).get_common_subreddit('energy'))
-
-    me_tokenizer = ByteLevelBPETokenizer()
-
-    me_tokenizer.train_from_iterator(
-        iterator=tokenizer_input_generator,
-        vocab_size=50,
-        min_frequency=2,
-        special_tokens=[
-            "<s>",
-            "<pad>",
-            "</s>",
-            "<unk>",
-            "<mask>",
-        ]
-    )
-
-    me_tokenizer.save_model(output_fname, model_output_name)
-
-
-else:   # If you've already built and saved a model then this skips re-training
-
-    me_tokenizer = ByteLevelBPETokenizer(
-        f"{output_fname}{model_output_name}-vocab.json",
-        f"{output_fname}{model_output_name}-merges.txt",
-    )
-
-
-me_tokenizer._tokenizer.post_processor = BertProcessing(
-    ("</s>", me_tokenizer.token_to_id("</s>")),
-    ("<s>", me_tokenizer.token_to_id("<s>")),
+lilTokenizer = TokenizerHelper(
+    output_fname=output_f,
+    model_output_name=model_name,
+    inputter=meHelper
 )
-me_tokenizer.enable_truncation(max_length=512)
 
-example_to_encode = "A reddit comment will jdhfbgw hehehehe RAWR XD :)))"
-print(f"\n\nENCODING: \n\t{example_to_encode}...\n...\n...")
+lilTokenizer.build_bert_tokenizer()
 
-example_encoded = me_tokenizer.encode(example_to_encode)
-print(example_encoded)
-print(example_encoded.tokens)
-
-print(f"\n...\n...\nEncoder Built - Script Complete\n...\n...\n...")
+lilTokenizer.save_tokenizer()
