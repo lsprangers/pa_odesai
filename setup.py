@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="cup-a-code-smoot",    # <package name>_<pypi username>
-    version="0.1.0",
+    version="0.1.1",
     author="Luke Sprangers",
     author_email="sprangersluke@gmail.com",
     description="A small example package named eloquently used for learning python",
@@ -25,7 +25,6 @@ setuptools.setup(
     install_requires=[
         "transformers>=4.4.2",
         "keras",
-        "keras-bert"
         "tensorflow>=2.0",
         "tensorflow-hub>=0.11.0",
         "gensim==4.0.0",

@@ -19,9 +19,7 @@ rdt_kwargs = {
     "password": os.getenv("REDDIT_PASSWORD"),
     "user_agent": "Checking:It:Out by (/smoot)",
 }
-output_f = "tests/tmp_outputs/"
-model_name = "smoot_tokenizer2"
-bool_tf_scratch = True
+
 subr = ls_reddit.SmootPraw(rdt_kwargs).get_common_subreddit('energy')
 
 meHelper = BertInputHelper(subreddit=subr)
@@ -31,3 +29,5 @@ bert = BertModel(
 )
 
 bert_features = bert.stack_final_layer()
+
+print(len(bert_features))   # output should be 100

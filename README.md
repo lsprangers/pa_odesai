@@ -1,6 +1,6 @@
 # Cup a Code: 
 #### PyPi Package 
-    Use tests/test_basic/more/even_more.py (3 files) to get feel for Doc2Vec, BERT, NNetworks, Word Embedding Models, compressing, and using
+    Use tests/test_<X> (3 files) to get feel for Doc2Vec, BERT, NNetworks, Word Embedding Models, compressing, and using
 
 ## Using this package:
 * Created to show necessary structure for creating a PyPi package
@@ -56,36 +56,22 @@
         python -m pip install --index-url http://my.package.repo/simple/ SomeProject
 
 **_Requirements - Packages_**
-
-    bert-tensorflow        >= 1.0.4
-    
+ 
     gensim                 == 4.0.0b0
     
     numpy                  >= 1.19.2
     
     pandas                 >= 1.2.3
     
-    praw                   == 7. 2.1.dev0
+    praw                   >= 7.2.0
     
     python-dotenv          >= 0.15.0
     
-    tensorflow             >= 2.4.1
+    tensorflow             >= 2.0
+
+    keras
     
-    tensorflow-addons      >= 0.12.1
-    
-    tensorflow-datasets    >= 4.2.0
-    
-    tensorflow-estimator   >= 2.4.0
-    
-    tensorflow-hub         >= 0.11.0
-    
-    tensorflow-metadata    >= 0.28.0
-    
-    tensorflow-text        >= 2.4.3
-    
-    tf-models-official     >= 2.4.0
-    
-    tensorflow-model-optimization >= 0.5.0
+    transformers           >= 4.4.2
 
 **_Requirements - NonPackages:_**
 

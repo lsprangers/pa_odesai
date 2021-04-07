@@ -12,4 +12,3 @@ tokenizers >= 0.10.1
 transformers >= 4.4.2
 tensorflow >= 2.0
 keras
-keras-bert
