@@ -23,17 +23,12 @@ setuptools.setup(
     package_dir={"": "nlp_brew"},
     packages=setuptools.find_packages(where="nlp_brew"),
     install_requires=[
-        "bert-tensorflow>=1.0.4",
-        "tensorflow>=2.4.1",
-        "tensorflow-addons>=0.12.1",
-        "tensorflow-datasets>=4.2.0",
-        "tensorflow-estimator>=2.4.0",
+        "transformers>=4.4.2",
+        "keras",
+        "keras-bert"
+        "tensorflow>=2.0",
         "tensorflow-hub>=0.11.0",
-        "tensorflow-metadata>=0.28.0",
-        "tensorflow-text>=2.4.3",
-        "tensorflow-model-optimization>=0.5.0"
-        "tf-models-official>=2.4.0",
-        "gensim==4.0.0b0",
+        "gensim==4.0.0",
         "praw>=7.2.1",
         "python-dotenv>=0.15.0",
         "numpy>=1.19.2",

@@ -7,7 +7,8 @@ import joblib
 
 common_subreddits = {
     'energy': 'RenewableEnergy+hardenergy+energypolitics+oilandgasworkers+Oil+wisconsin+milwaukee',
-    'dev': 'reddit_dev+code'
+    'dev': 'reddit_dev+code',
+    'vintage-clothes': 'vintagefashion+thriftstorehauls'
 }
 
 
