@@ -1,8 +1,4 @@
-import sys
-import praw
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
-from dotenv import load_dotenv
-import logging
 import joblib
 
 

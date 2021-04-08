@@ -29,6 +29,7 @@ setuptools.setup(
         "tensorflow-hub>=0.11.0",
         "gensim==4.0.0",
         "praw>=7.2.1",
+        "kaggle",
         "python-dotenv>=0.15.0",
         "numpy>=1.19.2",
         "pandas>=1.2.3",
