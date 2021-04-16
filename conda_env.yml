@@ -13,7 +13,6 @@ dependencies:
  - pandas
  - scikit-learn
  - scipy
- - virtualenv
  - python-dateutil
  - pip
  - pip:

@@ -1,12 +1,13 @@
 # Cup a Code: 
-#### PyPi Package 
-    Use tests/test_<X> (3 files) to get feel for Doc2Vec, BERT, NNetworks, Word Embedding Models, compressing, and using
+#### PyPi Package
+      Use tests/test_<X> (3 files) to get feel 
+      for Doc2Vec, BERT, NNetworks, Word Embedding Models, compressing, and using
 
-## Using this package:
-* Created to show necessary structure for creating a PyPi package
-* Side try - create easy to use tool for personal analytics for normal people
+### Using this package:
+   * Created to show necessary structure for creating a PyPi package
+   * Side try - create easy to use tool for personal analytics for normal people
 
-### _Creating a virtual environment_
+### Creating a virtual environment
 
 > Currently, there are three common tools for creating a virtual env:
 1) Conda (Anaconda) - suggested
@@ -112,12 +113,10 @@
 
 **Author:**
 
-    > Luke Sprangers
+    > StackOverflow
 
 
-**Kaggle ReadMe file (Copied for reference)**
-
-   >
+### **Kaggle ReadMe file (Copied for reference)**
       This data release lives at https://kaggle.com/seanlahman/baseball and was created by code at https://github.com/benhamner/baseball.
       It is a processed version of the 2015 data at www.seanlahman.com/baseball-archive/statistics/.
    
