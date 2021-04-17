@@ -1,9 +1,18 @@
-import sys
+import os
 import praw
-from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from dotenv import load_dotenv
 import logging
-import joblib
+
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+load_dotenv(verbose=True)
+
+my_reddit_params = {
+    'client_id': os.getenv("REDDIT_CLIENT_ID"),
+    'client_secret': os.getenv("REDDIT_CLIENT_SECRET"),
+    'username': os.getenv("REDDIT_USERNAME"),
+    'password': os.getenv("REDDIT_PASSWORD"),
+    'user_agent': "Checking:It:Out by (/smoot)",
+}
 
 common_subreddits = {
     'energy': 'RenewableEnergy+hardenergy+energypolitics+oilandgasworkers+Oil+wisconsin+milwaukee',
@@ -31,9 +40,15 @@ class SmootPraw:
 
     """
 
-    def __init__(self, reddit_login_configs):
+    def __init__(self, reddit_login_configs=my_reddit_params):
         self.reddit_login_configs = reddit_login_configs
         self.reddit_instance = praw.Reddit(**self.reddit_login_configs)
 
     def get_common_subreddit(self, choice):
         return self.reddit_instance.subreddit(common_subreddits[choice])
+
+
+if __name__ == '__main__':
+    tester = SmootPraw()
+    tester_subr = tester.get_common_subreddit('energy')
+    print(f"Got subreddit..type {type(tester_subr)}")
