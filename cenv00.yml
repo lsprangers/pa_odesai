@@ -8,7 +8,7 @@ dependencies:
  - joblib=1.0.1
  - tokenizers>=0.10.1
  - transformers>=4.4.2
- - pytorch>=1.8.1
+ - pytorch=1.4
  - gensim>=4.0.0
  - keras
  - tensorflow>=2.4
