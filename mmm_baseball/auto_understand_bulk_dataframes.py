@@ -1,21 +1,21 @@
 
-# *Not Recommended: pip install tensorflow --upgrade
-#   ...can degrade numpy and cause SIGILL error
-
-# conda update -f -c conda-forge tensorflow
-import transformers # , DistilBertModel, DistilBertTokenizer
+from transformers import (
+    pipeline,
+    DistilBertForTokenClassification,
+    DistilBertTokenizer,
+    TapasForQuestionAnswering
+)
 from connect_to_db import KaggleBaseballDatabaseConnector
 
 
-# model = DistilBertModel.from_pretrained("distilbert-base-cased")
-# tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-cased")
-# ner_pipe = pipelines('ner', model=model, tokenizer=tokenizer)
+distilbert_model = DistilBertForTokenClassification.from_pretrained("distilbert-base-cased")
+distilbert_tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-cased")
+ner_pipe = pipeline('ner', model=distilbert_model, tokenizer=distilbert_tokenizer)
 
-# needs pytorch_scatter, and pytorch 1.4
-tq_pipe = transformers.pipeline('table-question-answering')
+tapas_model = TapasForQuestionAnswering.from_pretrained("distilbert-base-cased")
+tq_pipe = pipeline(task='table-question-answering', model=tapas_model, tokenizer=distilbert_tokenizer)
 
 kaggler = KaggleBaseballDatabaseConnector()
-
 kaggler.print_all_tables()
 
 print('File done')
