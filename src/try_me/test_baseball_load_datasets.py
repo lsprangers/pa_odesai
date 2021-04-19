@@ -1,11 +1,11 @@
 import sys
 import sqlite3
-sys.path.extend(['.', '../', '../../', './mmm_baseball/'])
+sys.path.extend(['.', '../', '../../', './mmm_baseball/data/'])
 
 from pathlib import Path, PurePath
-import pandas as pd
+# import pandas as pd
 
-baseball_datasets_path = Path.cwd() / "mmm_baseball/kaggle_datasets"
+baseball_datasets_path = Path.cwd() / "mmm_baseball/data/kaggle_datasets"
 
 
 # https://pwp.stevecassidy.net/python/pysqlite.html

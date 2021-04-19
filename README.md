@@ -1,11 +1,70 @@
 # Cup a Code: 
 #### PyPi Package
-      Use tests/test_<X> (3 files) to get feel 
-      for Doc2Vec, BERT, NNetworks, Word Embedding Models, compressing, and using
+      Online References: 
+                  
+         1) StackOverflow  - https://stackoverflow.com/
+                  
+         2) PyPi           - https://pypi.org/
+                  
+         3) GitHub         - https://github.com/
+                  
+         4) HuggingFace    - https://huggingface.co/models
+         
+         5) Kaggle         - https://www.kaggle.com/
+                              *README @ bottom
 
-### Using this package:
+#### Using this package:
    * Created to show necessary structure for creating a PyPi package
    * Side try - create easy to use tool for personal analytics for normal people
+
+#### FOLDER --> src/try_me/_X_
+   * X can be
+
+         1) Word Embedding Models (Neural Nets)
+
+               Doc2Vec 
+               BERT 
+               GPT 3.0
+ 
+        
+         2) Tokenizers
+ 
+               NLTK Tokenizer - 
+                  nice part of speech (POS) tagger
+               
+               Bert Tokenizer - 
+                  nice final tokenizer      
+
+         
+         3) Data in general
+ 
+               > Scraping data from web
+                  Reddit
+                  Kaggle
+               
+               > Compressing objects
+                  joblib
+                  pickle
+                              
+               > Using pretrained & training from scratch
+                  nerural nets
+                  other ML predictors - regression, classification, etc.
+                              
+               > Transformations
+                  linear alg
+                  stat-distributions 
+
+# USE ONLY AFTER CREATING A VIRTUAL ENV
+$$$$
+
+
+**Why? Base compute without a venv allows imports/other things to spread across computer without being contained under a specified location**
+
+
+$$$$
+
+.
+
 
 ### Creating a virtual environment
 
@@ -32,10 +91,6 @@
    
         source <YER_DIR>/bin/activate
 
-# ONLY AFTER CREATING A VIRTUAL ENV
-
-**Why? Base compute without a venv allows imports/other things to spread across computer without being contained under a specified location**
-
 ### _Installing required packages_
     > Install a list of requirements specified in a Requirements File.
 
@@ -56,64 +111,9 @@
 
         python -m pip install --index-url http://my.package.repo/simple/ SomeProject
 
-**_Requirements - Packages_**
- 
-    gensim                 == 4.0.0b0
-    
-    numpy                  >= 1.19.2
-    
-    pandas                 >= 1.2.3
-    
-    praw                   >= 7.2.0
-    
-    python-dotenv          >= 0.15.0
-    
-    tensorflow             >= 2.0
-
-    keras
-    
-    transformers           >= 4.4.2
-
-**_Requirements - NonPackages:_**
-
-    * for these files ensure you do "chmod 600 ~/cup_a_code/.pyirc" to stop others
-            from viewing your credentials
-
-    > computer
-    
-    > python & virtual environment for it
-        
-    > * reddit developer account credentials in a .env 
-        file (not uploaded to repo)
-        
-    > * pypi account credentials in .pyirc file 
-        (not uploaded to repo)
-
-**_DUMP OF NOTES:_**
-
-    praw subreddit comment attributes: 
-        author: The author of the comment
-        body: The body of the comment
-        body_html: The body of the comment, as HTML.        
-        created_utc: Time the comment was created, represented in Unix Time.        
-        distinguished: Whether or not the comment is distinguished.        
-        edited: Whether or not the comment has been edited.       
-        id: The ID of the comment.     
-        is_submitter: Whether or not the comment author is also the author of the submission.       
-        link_id: The submission ID that the comment belongs to.       
-        parent_id: The ID of the parent comment (prefixed with t1_). If it is a top-level comment, this returns the submission ID instead (prefixed with t3_).       
-        permalink: A permalink for the comment. Comment objects from the inbox have a context attribute instead.       
-        replies: Provides an instance of CommentForest.      
-        saved: Whether or not the comment is saved.
-        score: The number of up-votes for the comment.
-        stickied: Whether or not the comment is stickied.
-        submission: Provides an instance of Submission. The submission that the comment belongs to.
-        subreddit: Provides an instance of Subreddit. The subreddit that the comment belongs to.
-        subreddit_id: The subreddit ID that the comment belongs to.
-
 **Author:**
 
-    > StackOverflow
+    StackOverflow (basically) & other internet sources
 
 
 ### **Kaggle ReadMe file (Copied for reference)**

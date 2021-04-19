@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 class KaggleBaseballDatabaseConnector:
-    def __init__(self, db_sqlite_path=(Path.cwd() / "mmm_baseball/kaggle_datasets/database.sqlite")):
+    def __init__(self, db_sqlite_path=(Path.cwd() / "mmm_baseball/data/kaggle_datasets/database.sqlite")):
         self.con = sqlite3.connect(db_sqlite_path)
         self.all_tables_statement = "SELECT name FROM sqlite_master WHERE type='table';"
 

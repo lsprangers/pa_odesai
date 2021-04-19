@@ -1,4 +1,4 @@
-#! kaggle datasets download -d open-source-sports/baseball-databank -p mmm_baseball/kaggle_data
+#! kaggle datasets download -d open-source-sports/baseball-databank -p mmm_baseball/data/kaggle_data
 #
 # import kaggle
 from pathlib import Path
@@ -24,8 +24,8 @@ print(__file__)
 
 if __name__ == '__main__':
     baseball_dataset_zip_files = ("baseball-databank.zip", "the-history-of-baseball.zip")
-    zip_dir = Path(Path.cwd() / "mmm_baseball/kaggle_data_zipfiles/")
-    unzip_dir = Path(Path.cwd() / "mmm_baseball/kaggle_datasets/")
+    zip_dir = Path(Path.cwd() / "mmm_baseball/data/kaggle_data_zipfiles/")
+    unzip_dir = Path(Path.cwd() / "mmm_baseball/data/kaggle_datasets/")
 
     kaggle_unzip = UnzipKaggleDatasetFiles(
         zip_files=baseball_dataset_zip_files,
