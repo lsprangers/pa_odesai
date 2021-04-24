@@ -22,7 +22,6 @@ dependencies:
  - matplotlib>=3.3.4
  - scikit-learn
  - scipy
- - speechrecognition
  - python-dateutil
  - setuptools
  - pip
