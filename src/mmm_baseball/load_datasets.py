@@ -19,9 +19,6 @@ class UnzipKaggleDatasetFiles:
             print(f"unzipped {zip_f} to {self.unzip_path}")
 
 
-print(__name__)
-print(__file__)
-
 if __name__ == '__main__':
     baseball_dataset_zip_files = ("baseball-databank.zip", "the-history-of-baseball.zip")
     zip_dir = Path(Path.cwd() / "mmm_baseball/data/kaggle_data_zipfiles/")
