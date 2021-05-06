@@ -1,5 +1,17 @@
-# Cup a Code: 
-#### PyPi Package
+## The UnNamed Project: 
+
+#### What is this?:
+    Created based on Owen Desai & Luke Sprangers wild imaginations
+
+### What are we doing?:
+    Trying to create something useful for the everyday person 
+
+### Why?
+    1 - Our parents and friends have been yelling at the TV a lot
+    2 - Luke wants to be able to use a tool to find evidence 
+        for when he argues with strangers on economics
+
+## Helpful References / Tools used
       Online References: 
                   
          1) StackOverflow  - https://stackoverflow.com/
@@ -11,62 +23,18 @@
          4) HuggingFace    - https://huggingface.co/models
          
          5) Kaggle         - https://www.kaggle.com/
-                              *README @ bottom
+                              *README @ bottom 4 ref.
 
-#### Using this package:
-   * Created to show necessary structure for creating a PyPi package
-   * Side try - create easy to use tool for personal analytics for normal people
+**Author(s):**
 
-#### FOLDER --> src/try_me/_X_
-   * X can be
-
-         1) Word Embedding Models (Neural Nets)
-
-               Doc2Vec 
-               BERT 
-               GPT 3.0
- 
-        
-         2) Tokenizers
- 
-               NLTK Tokenizer - 
-                  nice part of speech (POS) tagger
-               
-               Bert Tokenizer - 
-                  nice final tokenizer      
-
-         
-         3) Data in general
- 
-               > Scraping data from web
-                  Reddit
-                  Kaggle
-               
-               > Compressing objects
-                  joblib
-                  pickle
-                              
-               > Using pretrained & training from scratch
-                  nerural nets
-                  other ML predictors - regression, classification, etc.
-                              
-               > Transformations
-                  linear alg
-                  stat-distributions 
-
-# USE ONLY AFTER CREATING A VIRTUAL ENV
-$$$$
+    StackOverflow (basically) & other internet sources
+    Owen Desai
+    Luke Sprangers
 
 
-**Why? Base compute without a venv allows imports/other things to spread across computer without being contained under a specified location**
+# Help w/ Programming
 
-
-$$$$
-
-.
-
-
-### Creating a virtual environment
+### _Creating a virtual environment_
 
 > Currently, there are three common tools for creating a virtual env:
 1) Conda (Anaconda) - suggested
@@ -110,11 +78,6 @@ $$$$
     > Installing from other Indexes
 
         python -m pip install --index-url http://my.package.repo/simple/ SomeProject
-
-**Author:**
-
-    StackOverflow (basically) & other internet sources
-
 
 ### **Kaggle ReadMe file (Copied for reference)**
       This data release lives at https://kaggle.com/seanlahman/baseball and was created by code at https://github.com/benhamner/baseball.
