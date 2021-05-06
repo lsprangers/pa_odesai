@@ -1,4 +1,10 @@
 ## The UnNamed Project: 
+      Check out the Wiki for an easier description of project
+ 
+___
+___
+___
+
 
 ### What is this?:
     Created based on Owen Desai & Luke Sprangers wild imaginations
