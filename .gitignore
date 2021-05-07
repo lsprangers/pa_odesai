@@ -1,6 +1,9 @@
 # KAGGLE
 */kaggle.json
 
+#DJANGO KEY
+*/settings.py
+
 # BERT
 */train/
 */unsup/
