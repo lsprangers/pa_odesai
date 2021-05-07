@@ -47,7 +47,7 @@ ___
     
     a)  https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
     
-         conda env create -n yer_env -f conda_environment_yer_env.yml
+         conda env create -n yer_env -f conda_env.yml
    
          conda remove --name myenv --all
 
